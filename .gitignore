@@ -1,0 +1,4 @@
+.env
+__pycache__/
+.vscode/
+Heart_Report.pdf
