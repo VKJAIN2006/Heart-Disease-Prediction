@@ -518,11 +518,11 @@ for p in shown_pages:
     cls = "nav-link active" if p == page else "nav-link"
     u = st.session_state.user or ""
     auth_suffix = f"&u={u}" if u else ""
-    links.append(f'<a class="{cls}" href="?page={p}{auth_suffix}">{ICONS[p]} {p}</a>')
+    links.append(f'<a class="{cls}" href="?page={p}{auth_suffix}" target="_self">{ICONS[p]} {p}</a>')
 
 if st.session_state.logged_in:
     links.append(f'<span class="nav-username">{st.session_state.user}</span>')
-    links.append(f'<a class="nav-link logout" href="?page=Logout">🚪 Logout</a>')
+    links.append(f'<a class="nav-link logout" href="?page=Logout" target="_self">🚪 Logout</a>')
 
 tabs_html = "".join(links)
 
@@ -1103,10 +1103,10 @@ elif page == "Dashboard":
                 paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                 font=dict(color="#64748b", family="Inter"),
                 xaxis=dict(showgrid=False, title="Prediction #",
-                           titlefont=dict(size=11, color="#475569"),
+                           title=dict(font=dict(size=11, color="#475569")),
                            tickfont=dict(color="#475569"), zeroline=False),
                 yaxis=dict(showgrid=True, gridcolor="#161616", range=[0, 105],
-                           title="Probability %", titlefont=dict(size=11, color="#475569"),
+                           title="Probability %", title=dict(font=dict(size=11, color="#475569")),
                            tickfont=dict(color="#475569"), zeroline=False),
             )
             st.plotly_chart(fig_line, use_container_width=True)
@@ -1133,10 +1133,10 @@ elif page == "Dashboard":
                 margin=dict(t=10, b=30, l=10, r=10), height=260,
                 paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                 font=dict(color="#64748b", family="Inter"),
-                xaxis=dict(showgrid=False, title="Age", titlefont=dict(size=11, color="#475569"),
+                xaxis=dict(showgrid=False, title="Age", title=dict(font=dict(size=11, color="#475569")),
                            tickfont=dict(color="#475569"), zeroline=False),
                 yaxis=dict(showgrid=True, gridcolor="#161616", range=[0, 105],
-                           title="Probability %", titlefont=dict(size=11, color="#475569"),
+                           title="Probability %", title=dict(font=dict(size=11, color="#475569")),
                            tickfont=dict(color="#475569"), zeroline=False),
             )
             st.plotly_chart(fig_sc, use_container_width=True)
