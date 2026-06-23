@@ -1,10 +1,7 @@
 ❤️ Heart Disease Prediction Web App
 
 A machine learning–based web application that predicts the likelihood of heart disease based on user health parameters.
-The app is built using Python, Machine Learning, and Streamlit, and is deployed for real-time prediction.
-
-🔗 Live Demo:
-👉 https://heart-disease-prediction-vivek.streamlit.app/
+The app is built using Python, Machine Learning, and Streamlit.
 
 📌 Project Overview
 
